@@ -1,3 +1,6 @@
+use std::fmt;
+
+#[derive(Debug)]
 struct Object {
     width: u32,
     height: u32,
@@ -24,6 +27,13 @@ impl Object {
     }
 }
 
+//Debug formatting
+impl fmt::Display for Object {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "({}, {})", self.width, self.height)
+    }
+}
+
 
 
 fn main() {
@@ -36,5 +46,8 @@ fn main() {
 
     o.show();
     obj.show();
+
+    println!("{}", o); //debug
+    println!("{}", obj); //pretty debug
 
 }
