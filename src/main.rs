@@ -3,6 +3,7 @@ struct Object {
     height: u32,
 }
 
+//Method
 impl Object {
     fn area(&self) -> u32 {
         self.width * self.height
@@ -16,6 +17,13 @@ impl Object {
     }
 }
 
+//Related Functions
+impl Object {
+    fn show(&self) {
+        println!("{}x{} with area: {}", self.width, self.height, self.area());
+    }
+}
+
 
 
 fn main() {
@@ -26,6 +34,7 @@ fn main() {
 
     let obj = Object::new(57, 83);
 
-    println!("{}x{} with area: {}", o.width, o.height, o.area());
-    println!("{}x{} with area: {}", obj.width, obj.height, obj.area());
+    o.show();
+    obj.show();
+
 }
