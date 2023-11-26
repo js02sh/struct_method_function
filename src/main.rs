@@ -5,8 +5,15 @@ struct Object {
 
 impl Object {
     fn area(&self) -> u32 {
-    self.width * self.height
-    }  
+        self.width * self.height
+    }
+
+    fn new(width: u32, height: u32) -> Object {
+        Object { 
+            width, 
+            height, 
+        }
+    }
 }
 
 
@@ -17,5 +24,8 @@ fn main() {
         height: 55,
     };
 
+    let obj = Object::new(57, 83);
+
     println!("{}x{} with area: {}", o.width, o.height, o.area());
+    println!("{}x{} with area: {}", obj.width, obj.height, obj.area());
 }
