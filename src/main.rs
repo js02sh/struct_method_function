@@ -3,9 +3,13 @@ struct Object {
     height: u32,
 }
 
-fn area(obj: &Object) -> u32 {
-    obj.width * obj.height
+impl Object {
+    fn area(&self) -> u32 {
+    self.width * self.height
+    }  
 }
+
+
 
 fn main() {
     let o = Object {
@@ -13,5 +17,5 @@ fn main() {
         height: 55,
     };
 
-    println!("{}x{} with area: {}", o.width, o.height, area(&o));
+    println!("{}x{} with area: {}", o.width, o.height, o.area());
 }
